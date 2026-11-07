@@ -15,13 +15,46 @@ Repositorio: https://github.com/cancrexo/cancrexo-sftp
 - **Conexión SFTP.** `close` y `end` se registran como funciones. Antes `end()` se ejecutaba al registrar el listener y Node rechazaba la conexión.
 - **Rutas locales.** `getFileSystemPath` acepta la ruta como texto o como URI, para que en Linux no falle el cálculo de la ruta relativa.
 
+## Cómo compilar
+
+Desde la raíz del repo, ejecuta estos comandos en este orden.
+
+La aplicación no está limitada a Node 18. Compílala con Node 24 (versión indicada en `.nvmrc`).
+
+### Primera vez, o después de borrar node_modules
+
+```bash
+nvm use 24
+npm install
+npm run compile
+```
+
+El resultado queda en `dist/extension.js`.
+
+### Empaquetar el .vsix
+
+Con Node 24 ya activo, desde la raíz del repo ejecuta:
+
+```bash
+npx @vscode/vsce package
+```
+
+Ese comando vuelve a compilar y deja `cancrexo-sftp-1.16.3.vsix` en la misma carpeta.
+
 ## Instalación
 
-Se instala desde el archivo `.vsix`, no desde el marketplace.
+Se instala desde el archivo `.vsix` (ver [Empaquetar el .vsix](#empaquetar-el-vsix)), no desde el marketplace. El identificador es `Cancrexo.cancrexo-sftp`, un fork de `Natizyskunk.sftp`.
 
-1. Desinstala `Natizyskunk.sftp` si la tienes.
-2. En Extensiones, abre el menú `…` y elige Instalar desde VSIX…
-3. Selecciona `cancrexo-sftp-1.16.3.vsix` y recarga la ventana.
+1. Desinstala `Natizyskunk.sftp` si la tienes. Si no, conviven las dos.
+2. Instala el `.vsix`, de una de estas dos formas:
+    - Desde la interfaz: en Extensiones, abre el menú `…`, elige Instalar desde VSIX… y selecciona `cancrexo-sftp-1.16.3.vsix`.
+    - Desde la terminal, en la raíz del repo:
+
+      ```bash
+      cursor --install-extension cancrexo-sftp-1.16.3.vsix --force
+      ```
+
+3. Recarga la ventana con **Developer: Reload Window**. En el panel tiene que salir **Cancrexo-SFTP**, identificador `Cancrexo.cancrexo-sftp`.
 
 ---
 
