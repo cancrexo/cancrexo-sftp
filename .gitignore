@@ -11,6 +11,7 @@ como-compilar.md
 
 ### Extensions ###
 sftp-*.vsix
+cancrexo-sftp-*.vsix
 
 ### VS Code ###
 .vscode/**

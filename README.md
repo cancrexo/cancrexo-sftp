@@ -1,3 +1,9 @@
+# Cancrexo-SFTP
+
+Fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp), que a su vez es un fork de [liximomo/vscode-sftp](https://github.com/liximomo/vscode-sftp).
+
+El identificador es `Cancrexo.cancrexo-sftp`. No es la extensión del marketplace `Natizyskunk.sftp`.
+
 # sftp sync extension for VS Code
 
 New maintained and updated version by [@Natizyskunk](https://github.com/Natizyskunk/) 😀 <!-- and [@satiromarra](https://github.com/satiromarra) --> <br>
