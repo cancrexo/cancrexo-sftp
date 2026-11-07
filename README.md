@@ -1,29 +1,27 @@
 # Cancrexo-SFTP
 
-Fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp), que a su vez es un fork de [liximomo/vscode-sftp](https://github.com/liximomo/vscode-sftp).
+Fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) v1.16.3, que a su vez es un fork de [liximomo/vscode-sftp](https://github.com/liximomo/vscode-sftp).
 
-El identificador es `Cancrexo.cancrexo-sftp`. No es la extensión del marketplace `Natizyskunk.sftp`.
+El identificador es `Cancrexo.cancrexo-sftp`. No es la extensión del marketplace `Natizyskunk.sftp`: instalar la actualización de esa otra sustituye a esta.
 
-# sftp sync extension for VS Code
+Repositorio: https://github.com/cancrexo/cancrexo-sftp
 
-New maintained and updated version by [@Natizyskunk](https://github.com/Natizyskunk/) 😀 <!-- and [@satiromarra](https://github.com/satiromarra) --> <br>
-(Forked from the no longer maintained [liximomo's SFTP plugin](https://github.com/liximomo/vscode-sftp.git))
+## Cambios de este fork
 
-- VS Code marketplace : https://marketplace.visualstudio.com/items?itemName=Natizyskunk.sftp <br>
-- VSIX release : https://github.com/Natizyskunk/vscode-sftp/releases/
+- **`context` por perfil.** Cada perfil puede indicar su carpeta local. Si no la pone, usa la de la raíz. Se resuelve una vez al empezar cada subida o descarga. Los ficheros que quedan fuera de esa carpeta no se transfieren.
+- **Watcher por perfil.** Al cambiar de perfil se recrea el watcher con la configuración ya mezclada. `context` y `watcher` de un perfil sustituyen a los de la raíz.
+- **Límite.** El servicio sigue registrado sobre el `context` de la raíz. El de un perfil tiene que ser esa misma carpeta o una carpeta dentro de ella.
+- **Subidas en Cursor.** `ssh2` pasa a 1.17. En el Node de Cursor `util.isDate` ya no existe y la subida fallaba con `isDate is not a function`.
+- **Conexión SFTP.** `close` y `end` se registran como funciones. Antes `end()` se ejecutaba al registrar el listener y Node rechazaba la conexión.
+- **Rutas locales.** `getFileSystemPath` acepta la ruta como texto o como URI, para que en Linux no falle el cálculo de la ruta relativa.
 
-✳ I would be more than happy to have you participate in one way or another to this project. You can do so by simply following the [templates](https://github.com/Natizyskunk/vscode-sftp/issues/new/choose) when you open a new issue or a new pull request.
+## Instalación
 
-## ℹ INFOS - 2025/03/13
-I've tried to keep this extension up-to-date as much as I can and added a lot of new relevant features. Saddly, for the last year and a half I wasn't really able to work on the project because of personal reasons and I'm really not sure if and when I'll be able to get more time to work on it again. So for now consider the [v1.16.3](https://github.com/Natizyskunk/vscode-sftp/releases/tag/v1.16.3) as the latest official stable release available.
+Se instala desde el archivo `.vsix`, no desde el marketplace.
 
-## ℹ INFOS - 2023/06/23
-This is the main repository for the SFTP extension since [@liximomo](https://github.com/liximomo) has set his own to deprecated in favor of this one in the VSCode marketplace.
-There are also other forks that are available. Feel free to try them.
-
-A lot of work as been brought to fix bugs, add new features and more than 50 updates have been released with a lot of improvements and stability fixes for almost two years now. 😎
-
-I've been working hard to fix a lot of things and I've updated more than 50 new releases with a lot of improvements and stability fixes and I've brought new features for almost three years now. 
+1. Desinstala `Natizyskunk.sftp` si la tienes.
+2. En Extensiones, abre el menú `…` y elige Instalar desde VSIX…
+3. Selecciona `cancrexo-sftp-1.16.3.vsix` y recarga la ventana.
 
 ---
 
@@ -42,23 +40,6 @@ VSCode-SFTP enables you to add, edit or delete files within a local directory an
 - [Commands](https://github.com/Natizyskunk/vscode-sftp/wiki/Commands)
 - [Debug](#debug)
 - [FAQ](#FAQ)
-
-## Installation
-
-### Method 1 (Recommended : Auto update)
-1. Select Extensions (Ctrl + Shift + X).
-2. Uninstall current sftp extension from @liximomo.
-3. Install new extension directly from VS Code Marketplace : https://marketplace.visualstudio.com/items?itemName=Natizyskunk.sftp.
-4. Voilà!
-
-### Method 2 (Manual update)
-To install just follow these steps from within VSCode:
-1. Select Extensions (Ctrl + Shift + X).
-2. Uninstall current sftp extension from @liximomo.
-3. Open "More Action" menu(ellipsis on the top) and click "Install from VSIX…".
-4. Locate VSIX file and select.
-5. Reload VSCode.
-6. Voilà!
 
 ## Documentation
 - [Home](https://github.com/Natizyskunk/vscode-sftp/wiki)
@@ -106,10 +87,9 @@ For detailed explanations please go to [wiki](https://github.com/Natizyskunk/vsc
 ## Example configurations
 You can see the full list of configuration options [here](https://github.com/Natizyskunk/vscode-sftp/wiki/configuration).
 
-- [sftp sync extension for VS Code](#sftp-sync-extension-for-vs-code)
-  - [Installation](#installation)
-    - [Method 1 (Recommended : Auto update)](#method-1-recommended--auto-update)
-    - [Method 2 (Manual update)](#method-2-manual-update)
+- [Cancrexo-SFTP](#cancrexo-sftp)
+  - [Cambios de este fork](#cambios-de-este-fork)
+  - [Instalación](#instalación)
   - [Documentation](#documentation)
   - [Usage](#usage)
   - [Example configurations](#example-configurations)

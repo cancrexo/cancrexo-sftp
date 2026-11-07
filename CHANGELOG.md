@@ -1,3 +1,12 @@
+## Cancrexo-SFTP — 2026-11-07
+
+Fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) v1.16.3. Repositorio: https://github.com/cancrexo/cancrexo-sftp. Identificador `Cancrexo.cancrexo-sftp`.
+
+* `context` y `watcher` por perfil. La carpeta se resuelve al empezar cada subida o descarga. Lo que queda fuera no se transfiere. El `context` de un perfil tiene que estar dentro del de la raíz.
+* `ssh2` 1.17, para que la subida no falle en Cursor con `isDate is not a function`.
+* La conexión SFTP registra `close` y `end` como funciones.
+* `getFileSystemPath` acepta la ruta como texto o como URI.
+
 ## 1.16.3 - 2023-06-16
 * [#356] New Feature : Upload to all profiles (Pull request [#313](https://github.com/Natizyskunk/vscode-sftp/pull/313) from @wewawa vscode-sftp:create_multi_command).
 * [#357] Fix : Correcting Typo 'avaliable' => 'available' (Pull request [#343](https://github.com/Natizyskunk/vscode-sftp/pull/343) from @kjo-sdds vscode-sftp:develop).
