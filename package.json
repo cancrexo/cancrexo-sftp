@@ -9,13 +9,13 @@
     "vscode": "^1.64.2"
   },
   "bugs": {
-    "url": "https://github.com/Acuarel/vscode-sftp-chachi/issues",
+    "url": "https://github.com/cancrexo/cancrexo-sftp/issues",
     "email": "cancrexo@gmail.com"
   },
-  "homepage": "https://github.com/Acuarel/vscode-sftp-chachi/blob/develop/README.md",
+  "homepage": "https://github.com/cancrexo/cancrexo-sftp",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Acuarel/vscode-sftp-chachi.git"
+    "url": "https://github.com/cancrexo/cancrexo-sftp.git"
   },
   "license": "MIT",
   "categories": [
