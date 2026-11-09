@@ -32,7 +32,7 @@ export function handleCtxFromUri(uri: Uri): FileHandlerContext {
     if (uri.toString(true) == "file:///${command:sftp.sync.remoteToLocal}") {
       throw '';
     } else {
-      throw new Error(`Config Not Found. (${uri.toString(true)})`);
+      throw new Error(`Config Not Found. (${uri.toString(true)}). Si usas un perfil con "context", debe estar dentro del "context" de la raíz.`);
     }
   }
   const config = fileService.getConfig();
@@ -59,7 +59,7 @@ export function allHandleCtxFromUri(uri: Uri): Array<FileHandlerContext> {
     if (uri.toString(true) == "file:///${command:sftp.sync.remoteToLocal}") {
       throw '';
     } else {
-      throw new Error(`Config Not Found. (${uri.toString(true)})`);
+      throw new Error(`Config Not Found. (${uri.toString(true)}). Si usas un perfil con "context", debe estar dentro del "context" de la raíz.`);
     }
   }
 
