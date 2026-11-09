@@ -1,8 +1,8 @@
 # Cancrexo-SFTP
 
-Fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) v1.16.3, que a su vez es un fork de [liximomo/vscode-sftp](https://github.com/liximomo/vscode-sftp).
+Sincroniza una carpeta local con un servidor remoto por SFTP o FTP, desde VS Code o Cursor. Parte de [vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) 1.16.3 (ver [Origen y atribución](#origen-y-atribución)), con cambios propios y su propio historial de versiones: [CHANGELOG.md](CHANGELOG.md).
 
-El identificador es `Cancrexo.cancrexo-sftp`. No es la extensión del marketplace `Natizyskunk.sftp`: tiene otro identificador, así que las actualizaciones de esa otra no sustituyen a esta. Pero comparten los comandos `sftp.*`, la vista y el atajo `ctrl+alt+u`, por lo que **no deben estar instaladas a la vez**.
+El identificador es `Cancrexo.cancrexo-sftp`. Mantiene los comandos `sftp.*`, la vista, el atajo `ctrl+alt+u` y el fichero `.vscode/sftp.json` del original, para que quien venga de él no pierda su configuración. Por eso **no deben estar instaladas a la vez** esta extensión y `Natizyskunk.sftp`.
 
 Repositorio: https://github.com/cancrexo/cancrexo-sftp
 
@@ -40,26 +40,26 @@ Con Node 24 ya activo, desde la raíz del repo ejecuta:
 npx @vscode/vsce package
 ```
 
-Ese comando vuelve a compilar y deja `cancrexo-sftp-1.16.3.vsix` en la misma carpeta.
+Ese comando vuelve a compilar y deja `cancrexo-sftp-1.0.0.vsix` en la misma carpeta.
 
 ## Instalación
 
-Se instala desde el archivo `.vsix` (ver [Empaquetar el .vsix](#empaquetar-el-vsix)), no desde el marketplace. El identificador es `Cancrexo.cancrexo-sftp`, un fork de `Natizyskunk.sftp`.
+Se instala desde el archivo `.vsix` (ver [Empaquetar el .vsix](#empaquetar-el-vsix)), no desde el marketplace. El identificador es `Cancrexo.cancrexo-sftp`.
 
 1. Desinstala `Natizyskunk.sftp` si la tienes. No deben estar instaladas a la vez: comparten comandos, vista y atajo.
 2. Instala el `.vsix`, de una de estas dos formas:
-    - Desde la interfaz: en Extensiones, abre el menú `…`, elige Instalar desde VSIX… y selecciona `cancrexo-sftp-1.16.3.vsix`.
+    - Desde la interfaz: en Extensiones, abre el menú `…`, elige Instalar desde VSIX… y selecciona `cancrexo-sftp-1.0.0.vsix`.
     - Desde la terminal, en la raíz del repo:
 
       ```bash
-      cursor --install-extension cancrexo-sftp-1.16.3.vsix --force
+      cursor --install-extension cancrexo-sftp-1.0.0.vsix --force
       ```
 
 3. Recarga la ventana con **Developer: Reload Window**. En el panel tiene que salir **Cancrexo-SFTP**, identificador `Cancrexo.cancrexo-sftp`.
 
 ---
 
-VSCode-SFTP enables you to add, edit or delete files within a local directory and have it sync to a remote server directory using different transfer protocols like FTP or SSH. The most basic setup requires only a few lines of configuration with a wide array of specific settings also available to meet the needs of any user. Both powerful and fast, it helps developers save time by allowing the use of a familiar editor and environment.
+Cancrexo-SFTP enables you to add, edit or delete files within a local directory and have it sync to a remote server directory using different transfer protocols like FTP or SSH. The most basic setup requires only a few lines of configuration with a wide array of specific settings also available to meet the needs of any user. Both powerful and fast, it helps developers save time by allowing the use of a familiar editor and environment.
 
 - Features
   - [Browser remote with Remote Explorer](#remote-explorer)
@@ -139,9 +139,7 @@ You can see the full list of configuration options [here](https://github.com/Nat
     - [Order](#order)
   - [Debug](#debug)
   - [FAQ](#faq)
-  - [Donation](#donation)
-    - [Buy Me a Coffee](#buy-me-a-coffee)
-    - [PayPal](#paypal)
+  - [Origen y atribución](#origen-y-atribución)
 
 ### Simple
 ```json
@@ -334,13 +332,7 @@ In sftp.json:
 ## FAQ
 You can see all the Frequently Asked Questions [here](./FAQ.md).
 
-## Donation
-If this project helped you reduce development time and you wish to contribute financially
+## Origen y atribución
+Cancrexo-SFTP parte de [vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) 1.16.3, mantenido por Natizyskunk (Natan FOURIÉ), que a su vez es un fork del [vscode-sftp original](https://github.com/liximomo/vscode-sftp) de liximomo. Gracias a ambos por su trabajo.
 
-### Buy Me a Coffee
-[![Buy Me A Coffee](https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png)](https://www.buymeacoffee.com/Natizyskunk)
-
-### PayPal
-<!-- [![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BY89QD47D7MPS&source=url) -->
-[![PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/donate?business=DELD7APHHM3BC&no_recurring=0&currency_code=EUR)
-[![PayPal Me](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/natanfourie)
+El código se distribuye con la licencia MIT. El [LICENSE](LICENSE) conserva los avisos de copyright del trabajo original.
