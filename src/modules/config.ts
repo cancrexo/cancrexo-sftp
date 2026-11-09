@@ -118,6 +118,8 @@ function mergedDefault(config) {
   return {
     ...defaultConfig,
     ...config,
+    // Si la raíz define remoteExplorer sin "order", se conserva el valor por defecto
+    remoteExplorer: { ...defaultConfig.remoteExplorer, ...config.remoteExplorer },
   };
 }
 
