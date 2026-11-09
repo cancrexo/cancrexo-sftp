@@ -359,7 +359,7 @@ export default class SSHClient extends RemoteClient {
 
     if (this.hoppingClients) {
       // last connect first end
-      this.hoppingClients.reverse().forEach(client => client.end());
+      this.hoppingClients.slice().reverse().forEach(client => client.end());
     }
   }
 
