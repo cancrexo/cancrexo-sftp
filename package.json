@@ -1,7 +1,7 @@
 {
   "name": "cancrexo-sftp",
   "displayName": "Cancrexo-SFTP",
-  "description": "Fork de Natizyskunk/vscode-sftp. Sincronización SFTP/FTP, con context y watcher por perfil.",
+  "description": "Sincronización SFTP/FTP para VS Code y Cursor, con context y watcher por perfil. Parte de vscode-sftp.",
   "version": "1.0.0",
   "publisher": "Cancrexo",
   "author": "Daniel \"Cancrexo\" Prol <cancrexo@gmail.com>",
