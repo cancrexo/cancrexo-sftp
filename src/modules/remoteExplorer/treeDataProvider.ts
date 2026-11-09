@@ -108,7 +108,7 @@ export default class RemoteTreeData
     const isRoot = (item as ExplorerRoot).explorerContext !== undefined;
     let customLabel;
     if (isRoot) {
-      customLabel = (item as ExplorerRoot).explorerContext.fileService.name;
+      customLabel = (item as ExplorerRoot).explorerContext.config.name;
     }
     if (!customLabel) {
       customLabel = upath.basename(item.resource.fsPath);
@@ -270,7 +270,7 @@ export default class RemoteTreeData
       this._rootsMap!.set(id, item);
       this._map.set(item.resource.uri.query, item);
     });
-    this._roots.sort((a,b) => a.explorerContext.config.remoteExplorer.order - b.explorerContext.config.remoteExplorer.order || a.explorerContext.fileService.name.localeCompare(b.explorerContext.fileService.name));
+    this._roots.sort((a,b) => a.explorerContext.config.remoteExplorer.order - b.explorerContext.config.remoteExplorer.order || (a.explorerContext.config.name || '').localeCompare(b.explorerContext.config.name || ''));
     return this._roots;
   }
 }

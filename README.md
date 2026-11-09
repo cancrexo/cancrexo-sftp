@@ -14,6 +14,7 @@ Repositorio: https://github.com/cancrexo/cancrexo-sftp
 - **Subidas en Cursor.** `ssh2` pasa a 1.17. En el Node de Cursor `util.isDate` ya no existe y la subida fallaba con `isDate is not a function`.
 - **Conexión SFTP.** `close` y `end` se registran como funciones. Antes `end()` se ejecutaba al registrar el listener y Node rechazaba la conexión.
 - **Rutas locales.** `getFileSystemPath` acepta la ruta como texto o como URI, para que en Linux no falle el cálculo de la ruta relativa.
+- **`name` por perfil.** Se muestra en el Remote Explorer, el diff y las listas. `name` ya no es obligatorio en el schema.
 
 ## Cómo compilar
 
@@ -206,7 +207,7 @@ The context must **not be same**.
 ]
 ```
 
-_Note：_ `name` is required in this mode.
+_Note：_ `name` is recommended in this mode to tell the configurations apart.
 
 ### Connection Hopping
 You can connect to a target server through a proxy with ssh protocol.

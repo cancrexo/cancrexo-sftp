@@ -49,6 +49,15 @@
                 },
                 {
                   "$ref": "definitions.json#/sftp"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Name shown for this profile in the Remote Explorer. If omitted, the root name is used."
+                    }
+                  }
                 }
               ]
             }

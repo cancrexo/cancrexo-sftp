@@ -2,6 +2,7 @@
 
 ### name
 A string to identify your configuration.
+It can also be set inside a profile; that name is then used when the profile is selected.
 
 | Key | Value |
 | --- | --- |

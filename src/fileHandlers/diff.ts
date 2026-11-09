@@ -20,7 +20,7 @@ export const diff = createFileHandler({
     await diffFiles(
       tmpPath,
       localFsPath,
-      `${path.basename(localFsPath)} (${this.fileService.name || 'remote'} ↔ local)`
+      `${path.basename(localFsPath)} (${this.config.name || 'remote'} ↔ local)`
     );
   },
 });

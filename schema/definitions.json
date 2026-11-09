@@ -40,8 +40,7 @@
         "type": "string",
         "description": "Profile name you want to set as default."
       }
-    },
-    "required": ["name"]
+    }
   },
   "option": {
     "type": "object",

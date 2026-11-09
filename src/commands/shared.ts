@@ -50,7 +50,7 @@ export function selectContext(): Promise<Uri | undefined> {
     const projectsList = sercives
       .map(service => ({
         value: service.baseDir,
-        label: service.name || simplifyPath(service.baseDir),
+        label: service.getConfig().name || simplifyPath(service.baseDir),
         description: '',
         detail: service.baseDir,
       }))
