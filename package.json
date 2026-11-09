@@ -60,7 +60,8 @@
         "sftp.printDebugLog": {
           "type": "boolean",
           "default": false,
-          "description": "print debug log on sftp output channel.(reload vscode when change this)"
+          "description": "Deprecated. Use \"sftp.debug\" instead. Print debug log on sftp output channel (reload vscode when change this).",
+          "deprecationMessage": "Deprecated: use \"sftp.debug\" instead."
         },
         "sftp.debug": {
           "type": "boolean",
