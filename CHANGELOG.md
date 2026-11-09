@@ -8,6 +8,9 @@ Fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) v1
 * `getFileSystemPath` acepta la ruta como texto o como URI.
 * El `name` de un perfil se muestra en el Remote Explorer, el diff y las listas. `name` ya no es obligatorio en el schema.
 * Los perfiles combinan `watcher`, `syncOption` y `remoteExplorer` campo a campo con la raíz en vez de sustituirlos enteros.
+* Guardar o abrir un fichero ya no deja una excepción sin tratar si falla la configuración del perfil activo: el error va al log y a la barra de estado. El error de «subir al guardar» decía `download` en el log.
+* Todos los comandos «to all profiles» piden confirmación antes de subir, no solo los de fichero y carpeta.
+* `sftp.printDebugLog` queda obsoleto en favor de `sftp.debug`. Sigue funcionando.
 
 ## 1.16.3 - 2023-06-16
 * [#356] New Feature : Upload to all profiles (Pull request [#313](https://github.com/Natizyskunk/vscode-sftp/pull/313) from @wewawa vscode-sftp:create_multi_command).

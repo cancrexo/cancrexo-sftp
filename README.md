@@ -2,7 +2,7 @@
 
 Fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) v1.16.3, que a su vez es un fork de [liximomo/vscode-sftp](https://github.com/liximomo/vscode-sftp).
 
-El identificador es `Cancrexo.cancrexo-sftp`. No es la extensión del marketplace `Natizyskunk.sftp`: instalar la actualización de esa otra sustituye a esta.
+El identificador es `Cancrexo.cancrexo-sftp`. No es la extensión del marketplace `Natizyskunk.sftp`: tiene otro identificador, así que las actualizaciones de esa otra no sustituyen a esta. Pero comparten los comandos `sftp.*`, la vista y el atajo `ctrl+alt+u`, por lo que **no deben estar instaladas a la vez**.
 
 Repositorio: https://github.com/cancrexo/cancrexo-sftp
 
@@ -46,7 +46,7 @@ Ese comando vuelve a compilar y deja `cancrexo-sftp-1.16.3.vsix` en la misma car
 
 Se instala desde el archivo `.vsix` (ver [Empaquetar el .vsix](#empaquetar-el-vsix)), no desde el marketplace. El identificador es `Cancrexo.cancrexo-sftp`, un fork de `Natizyskunk.sftp`.
 
-1. Desinstala `Natizyskunk.sftp` si la tienes. Si no, conviven las dos.
+1. Desinstala `Natizyskunk.sftp` si la tienes. No deben estar instaladas a la vez: comparten comandos, vista y atajo.
 2. Instala el `.vsix`, de una de estas dos formas:
     - Desde la interfaz: en Extensiones, abre el menú `…`, elige Instalar desde VSIX… y selecciona `cancrexo-sftp-1.16.3.vsix`.
     - Desde la terminal, en la raíz del repo:
