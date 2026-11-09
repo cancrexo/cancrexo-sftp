@@ -48,12 +48,17 @@ export function selectContext(): Promise<Uri | undefined> {
   return new Promise((resolve, reject) => {
     const sercives = getAllFileService();
     const projectsList = sercives
-      .map(service => ({
-        value: service.baseDir,
-        label: service.getConfig().name || simplifyPath(service.baseDir),
-        description: '',
-        detail: service.baseDir,
-      }))
+      .map(service => {
+        const config = service.getConfig();
+        // Con perfil activo, el "proyecto" es la carpeta (context) del perfil, no la de la raíz.
+        const contextPath = getBasePath(config.context, service.workspace);
+        return {
+          value: contextPath,
+          label: config.name || simplifyPath(contextPath),
+          description: '',
+          detail: contextPath,
+        };
+      })
       .sort((l, r) => l.label.localeCompare(r.label));
 
     // if (projectsList.length === 1) {

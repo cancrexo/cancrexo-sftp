@@ -8,7 +8,7 @@ Repositorio: https://github.com/cancrexo/cancrexo-sftp
 
 ## Cambios de este fork
 
-- **`context` por perfil.** Cada perfil puede indicar su carpeta local. Si no la pone, usa la de la raíz. Se resuelve una vez al empezar cada subida o descarga. Los ficheros que quedan fuera de esa carpeta no se transfieren.
+- **`context` por perfil.** Cada perfil puede indicar su carpeta local. Si no la pone, usa la de la raíz. Se resuelve una vez al empezar cada subida o descarga. Los ficheros que quedan fuera de esa carpeta no se transfieren. Upload Project, Download Project y los Sync sin carpeta seleccionada usan la carpeta del perfil activo.
 - **Watcher por perfil.** Al cambiar de perfil se recrea el watcher con la configuración ya mezclada. El `context` de un perfil sustituye al de la raíz. `watcher`, `syncOption` y `remoteExplorer` se combinan campo a campo con los de la raíz: el perfil solo tiene que indicar lo que cambia.
 - **Límite.** El servicio sigue registrado sobre el `context` de la raíz. El de un perfil tiene que ser esa misma carpeta o una carpeta dentro de ella.
 - **Subidas en Cursor.** `ssh2` pasa a 1.17. En el Node de Cursor `util.isDate` ya no existe y la subida fallaba con `isDate is not a function`.
