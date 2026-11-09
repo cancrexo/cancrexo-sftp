@@ -44,17 +44,17 @@ async function handleFileSave(uri: vscode.Uri) {
     return;
   }
 
-  const config = fileService.getConfig();
-  if (config.uploadOnSave) {
-    const fspath = await realpathSync.native(uri.fsPath);
-    uri = vscode.Uri.file(fspath);
-    logger.info(`[file-save] ${fspath}`);
-    try {
+  try {
+    const config = fileService.getConfig();
+    if (config.uploadOnSave) {
+      const fspath = await realpathSync.native(uri.fsPath);
+      uri = vscode.Uri.file(fspath);
+      logger.info(`[file-save] ${fspath}`);
       await uploadFile(uri);
-    } catch (error) {
-      logger.error(error, `download ${fspath}`);
-      app.sftpBarItem.updateStatus(StatusBarItem.Status.error);
     }
+  } catch (error) {
+    logger.error(error, `upload ${uri.fsPath}`);
+    app.sftpBarItem.updateStatus(StatusBarItem.Status.error);
   }
 }
 
@@ -64,21 +64,20 @@ async function downloadOnOpen(uri: vscode.Uri) {
     return;
   }
 
-  const config = fileService.getConfig();
-  if (config.downloadOnOpen) {
-    if (config.downloadOnOpen === 'confirm') {
-      const isConfirm = await showConfirmMessage('Do you want SFTP to download this file?');
-      if (!isConfirm) return;
-    }
+  try {
+    const config = fileService.getConfig();
+    if (config.downloadOnOpen) {
+      if (config.downloadOnOpen === 'confirm') {
+        const isConfirm = await showConfirmMessage('Do you want SFTP to download this file?');
+        if (!isConfirm) return;
+      }
 
-    const fspath = uri.fsPath;
-    logger.info(`[file-open] ${fspath}`);
-    try {
+      logger.info(`[file-open] ${uri.fsPath}`);
       await downloadFile(uri);
-    } catch (error) {
-      logger.error(error, `download ${fspath}`);
-      app.sftpBarItem.updateStatus(StatusBarItem.Status.error);
     }
+  } catch (error) {
+    logger.error(error, `download ${uri.fsPath}`);
+    app.sftpBarItem.updateStatus(StatusBarItem.Status.error);
   }
 }
 
