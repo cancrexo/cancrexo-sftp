@@ -71,17 +71,17 @@ Cancrexo-SFTP enables you to add, edit or delete files within a local directory 
   - Multiple configurations
   - Switchable profiles
   - Temp File support
-- [Commands](https://github.com/Natizyskunk/vscode-sftp/wiki/Commands)
+- [Commands](docs/commands.md)
 - [Debug](#debug)
 - [FAQ](#FAQ)
 
 ## Documentation
-- [Home](https://github.com/Natizyskunk/vscode-sftp/wiki)
-- [Settings](https://github.com/Natizyskunk/vscode-sftp/wiki/Setting)
-- [Common configuration](https://github.com/Natizyskunk/vscode-sftp/wiki/Common-Configuration)
-- [SFTP configuration](https://github.com/Natizyskunk/vscode-sftp/wiki/SFTP-only-Configuration)
-- [FTP confriguration](https://github.com/Natizyskunk/vscode-sftp/wiki/FTP(s)-only-Configuration)
-- [Commands](https://github.com/Natizyskunk/vscode-sftp/wiki/Commands)
+- [Home](docs/home.md)
+- [Settings](docs/setting.md)
+- [Common configuration](docs/common_configuration.md)
+- [SFTP configuration](docs/sftp_configuration.md)
+- [FTP configuration](docs/ftp_configuration.md)
+- [Commands](docs/commands.md)
 
 ## Usage
 If the latest files are already on a remote server, you can start with an empty local folder,
@@ -116,10 +116,10 @@ _Note：_ backslashes and other special characters must be escaped with a backsl
 8. Done - you can now edit locally and after each save it will upload to sync your remote file with the local copy.
 9. Enjoy!
 
-For detailed explanations please go to [wiki](https://github.com/Natizyskunk/vscode-sftp/wiki).
+For detailed explanations please go to the [documentation](docs/home.md).
 
 ## Example configurations
-You can see the full list of configuration options [here](https://github.com/Natizyskunk/vscode-sftp/wiki/configuration).
+You can see the full list of configuration options [here](docs/configuration.md).
 
 - [Cancrexo-SFTP](#cancrexo-sftp)
   - [Cambios de este fork](#cambios-de-este-fork)
@@ -296,7 +296,7 @@ In sftp.json:
 ```
 
 ## Remote Explorer
-![remote-explorer-preview](https://raw.githubusercontent.com/Natizyskunk/vscode-sftp/master/assets/showcase/remote-explorer.png)
+![remote-explorer-preview](assets/showcase/remote-explorer.png)
 
 Remote Explorer lets you explore files in remote. You can open Remote Explorer by:
 
