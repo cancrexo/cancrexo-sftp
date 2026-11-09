@@ -9,7 +9,7 @@ Repositorio: https://github.com/cancrexo/cancrexo-sftp
 ## Cambios de este fork
 
 - **`context` por perfil.** Cada perfil puede indicar su carpeta local. Si no la pone, usa la de la raíz. Se resuelve una vez al empezar cada subida o descarga. Los ficheros que quedan fuera de esa carpeta no se transfieren.
-- **Watcher por perfil.** Al cambiar de perfil se recrea el watcher con la configuración ya mezclada. `context` y `watcher` de un perfil sustituyen a los de la raíz.
+- **Watcher por perfil.** Al cambiar de perfil se recrea el watcher con la configuración ya mezclada. El `context` de un perfil sustituye al de la raíz. `watcher`, `syncOption` y `remoteExplorer` se combinan campo a campo con los de la raíz: el perfil solo tiene que indicar lo que cambia.
 - **Límite.** El servicio sigue registrado sobre el `context` de la raíz. El de un perfil tiene que ser esa misma carpeta o una carpeta dentro de ella.
 - **Subidas en Cursor.** `ssh2` pasa a 1.17. En el Node de Cursor `util.isDate` ya no existe y la subida fallaba con `isDate is not a function`.
 - **Conexión SFTP.** `close` y `end` se registran como funciones. Antes `end()` se ejecutaba al registrar el listener y Node rechazaba la conexión.
@@ -180,7 +180,7 @@ You can see the full list of configuration options [here](https://github.com/Nat
 }
 ```
 
-A profile inherits the root values. `context` and `watcher` set on a profile replace the root ones. A profile that omits them keeps the root folder and the root watcher.
+A profile inherits the root values. `context` set on a profile replaces the root one. `watcher`, `syncOption` and `remoteExplorer` are merged field by field with the root ones, so a profile only needs to set what changes. A profile that omits them keeps the root folder and the root values.
 
 Use `SFTP: Set Profile` to switch profile.
 

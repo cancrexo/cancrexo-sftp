@@ -341,6 +341,9 @@ function getCompleteConfig(
   return mergedConfig;
 }
 
+// Objetos que se combinan campo a campo con los de la raíz. El resto de claves del perfil sustituye al valor de la raíz.
+const PROFILE_MERGED_KEYS = ['watcher', 'syncOption', 'remoteExplorer'];
+
 function mergeProfile(
   target: FileServiceConfig,
   source: FileServiceConfig
@@ -352,6 +355,13 @@ function mergeProfile(
   for (const key of keys) {
     if (key === 'ignore') {
       res.ignore = res.ignore.concat(source.ignore);
+    } else if (
+      PROFILE_MERGED_KEYS.indexOf(key) !== -1 &&
+      res[key] && typeof res[key] === 'object' &&
+      source[key] && typeof source[key] === 'object'
+    ) {
+      // Objeto nuevo: res comparte referencias con la config de la raíz y no se puede mutar.
+      res[key] = Object.assign({}, res[key], source[key]);
     } else {
       res[key] = source[key];
     }

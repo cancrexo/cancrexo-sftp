@@ -7,6 +7,7 @@ Fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) v1
 * La conexión SFTP registra `close` y `end` como funciones.
 * `getFileSystemPath` acepta la ruta como texto o como URI.
 * El `name` de un perfil se muestra en el Remote Explorer, el diff y las listas. `name` ya no es obligatorio en el schema.
+* Los perfiles combinan `watcher`, `syncOption` y `remoteExplorer` campo a campo con la raíz en vez de sustituirlos enteros.
 
 ## 1.16.3 - 2023-06-16
 * [#356] New Feature : Upload to all profiles (Pull request [#313](https://github.com/Natizyskunk/vscode-sftp/pull/313) from @wewawa vscode-sftp:create_multi_command).
