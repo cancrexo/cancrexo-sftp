@@ -12,6 +12,8 @@ Fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) v1
 * Todos los comandos «to all profiles» piden confirmación antes de subir, no solo los de fichero y carpeta.
 * `sftp.printDebugLog` queda obsoleto en favor de `sftp.debug`. Sigue funcionando.
 * `Upload Project`, `Download Project` y los `Sync` sin carpeta seleccionada usan la carpeta del perfil activo. Antes, con un perfil cuyo `context` era una subcarpeta de la raíz, la orden se omitía entera.
+* Al cerrar una conexión con saltos (`hop`), `end()` ya no invierte el array de saltos en cada llamada.
+* Un `remoteExplorer` definido en la raíz sin `order` conserva el valor por defecto `0`.
 
 ## 1.16.3 - 2023-06-16
 * [#356] New Feature : Upload to all profiles (Pull request [#313](https://github.com/Natizyskunk/vscode-sftp/pull/313) from @wewawa vscode-sftp:create_multi_command).
