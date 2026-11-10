@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.0.0 - 2026-11-09
+## 1.0.0 - 2026-11-10
 
 Primera versión de Cancrexo-SFTP, fork de [Natizyskunk/vscode-sftp](https://github.com/Natizyskunk/vscode-sftp) v1.16.3. Repositorio: https://github.com/cancrexo/cancrexo-sftp. Identificador `Cancrexo.cancrexo-sftp`.
 
